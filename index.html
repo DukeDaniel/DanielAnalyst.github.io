@@ -40,9 +40,9 @@
 								<ul>
 									<li class="current"><a href="#">Welcome</a></li>
 									<li>
-										<a href="#">More Projects</a>
+										<a href="#projects-wrapper">Projects</a>
 										<ul>
-											<li><a href="#">stay tuned...</a></li>
+											<li><a href="#projects-wrapper">Selected work</a></li>
 											<!--
 
 												<li><a href="#">Magna phasellus</a></li>
@@ -196,6 +196,181 @@
 
 							</div>
 						</div>
+					</div>
+				</div>
+
+			<!-- Projects -->
+				<div id="projects-wrapper">
+					<div class="container">
+						<header class="major">
+							<h2>Selected Projects</h2>
+							<p>Systems I designed and built end to end &mdash; from data pipelines and local
+							inference to packaged desktop tools. Interfaces shown below are sanitised
+							reconstructions; no production data appears anywhere on this page.</p>
+						</header>
+
+						<style>
+							#projects-wrapper { padding: 3.5em 0 0 0; }
+							#projects-wrapper .major { margin-bottom: 2em; }
+							#projects-wrapper .major h2 { font-size: 1.85em; font-weight: 600; letter-spacing: -0.01em; }
+							#projects-wrapper .major p { color: #606060; max-width: 46em; margin-top: 0.6em; font-size: 0.95em; }
+							.pj-card {
+								display: flex; flex-wrap: wrap; gap: 0;
+								background: #ffffff; border: 1px solid #e2e2e2; border-radius: 10px;
+								overflow: hidden; margin-bottom: 1.6em;
+								box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.03);
+							}
+							.pj-shot {
+								flex: 0 0 44%; max-width: 44%; background: #0a0d14;
+								display: flex; align-items: center; border-right: 1px solid #e2e2e2;
+							}
+							.pj-shot img { width: 100%; height: auto; display: block; }
+							.pj-body { flex: 1 1 56%; padding: 1.6em 1.8em; min-width: 300px; }
+							.pj-body h3 { font-size: 1.22em; font-weight: 600; color: #202020; margin: 0 0 0.2em 0; letter-spacing: -0.01em; }
+							.pj-sub { font-size: 0.86em; color: #7a7a7a; margin: 0 0 0.9em 0; letter-spacing: 0.01em; }
+							.pj-body p { font-size: 0.9em; line-height: 1.62; color: #555555; margin: 0 0 0.9em 0; }
+							.pj-tags { margin: 0 0 1em 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.4em; }
+							.pj-tags li {
+								font-size: 0.68em; letter-spacing: 0.06em; text-transform: uppercase;
+								color: #4a5a6a; background: #f1f4f7; border: 1px solid #e0e6ec;
+								border-radius: 4px; padding: 0.3em 0.6em;
+							}
+							.pj-note {
+								display: flex; align-items: flex-start; gap: 0.55em;
+								background: #fbf7ee; border: 1px solid #eee0c4; border-radius: 6px;
+								padding: 0.65em 0.85em; font-size: 0.78em; line-height: 1.5; color: #7a6533;
+							}
+							.pj-note strong { color: #5c4a1e; font-weight: 600; }
+							@media screen and (max-width: 840px) {
+								.pj-shot { flex: 0 0 100%; max-width: 100%; border-right: none; border-bottom: 1px solid #e2e2e2; }
+								.pj-body { padding: 1.3em 1.4em; }
+							}
+						</style>
+
+						<!-- Hermes Watch -->
+						<article class="pj-card">
+							<div class="pj-shot"><img src="images/projects/hermes-watch.png" alt="Hermes Watch activity dashboard" /></div>
+							<div class="pj-body">
+								<h3>Hermes Watch</h3>
+								<p class="pj-sub">Local work analytics for Windows &middot; Python, SQLite, Chrome extension</p>
+								<p>A portable Windows app that samples machine and human activity and turns it into an
+								honest daily summary. A native collector records CPU, memory, disk, network and GPU load,
+								the foreground window, per-process I/O and idle time. A Chrome extension covers the browser
+								half: open tabs per profile, the active tab, time per domain, and a deliberately narrow page
+								context &mdash; with no page text, keystrokes, clipboard contents or screenshots ever read.
+								Everything lands in one SQLite database in WAL mode, and a localhost dashboard streams live
+								state over Server-Sent Events. Summaries run on a deterministic rules engine, with a language
+								model only optionally adding narrative.</p>
+								<ul class="pj-tags">
+									<li>Python</li><li>SQLite WAL</li><li>Chrome MV3</li><li>Server-Sent Events</li><li>Win32</li><li>nvidia-smi</li>
+								</ul>
+								<div class="pj-note">
+									<span>&#9679;</span>
+									<span><strong>Not publicly downloadable.</strong> Request a copy and I will share the
+									project on request.</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Local Si -->
+						<article class="pj-card">
+							<div class="pj-shot"><img src="images/projects/local-si.png" alt="Local Si model catalogue dashboard" /></div>
+							<div class="pj-body">
+								<h3>Local Si</h3>
+								<p class="pj-sub">Self-contained local model stack &middot; Python, llama.cpp, CUDA</p>
+								<p>Running a useful model locally usually means juggling an inference server, a chat client and
+								hand-edited configuration. Local Si puts all of it in one folder: a Python web app that manages
+								pools of GGUF models, serves them through a single compatible endpoint, and embeds a full agent
+								harness as a second tab in the same window. A hardware scan rates every model against the
+								machine in about a tenth of a second. Two updaters stage, smoke-test, swap and automatically
+								roll back llama.cpp and harness builds, so a bad release cannot leave the stack broken. It runs
+								entirely offline and mirrors byte-for-byte to a second drive.</p>
+								<ul class="pj-tags">
+									<li>Python</li><li>llama.cpp</li><li>GGUF</li><li>CUDA</li><li>three.js</li><li>rsync</li>
+								</ul>
+								<div class="pj-note">
+									<span>&#9679;</span>
+									<span><strong>Not publicly downloadable.</strong> Request a copy and I will share the
+									project on request.</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- System Doctor -->
+						<article class="pj-card">
+							<div class="pj-shot"><img src="images/projects/system-doctor.png" alt="System Doctor operations console" /></div>
+							<div class="pj-body">
+								<h3>System Doctor</h3>
+								<p class="pj-sub">In-place Windows repair console &middot; PowerShell, Three.js, local AI</p>
+								<p>Laptops that stay in service drift: policy quietly reverts, caches and update stores inflate,
+								services stop, drivers fail after a patch. The standard remedy is a reimage, which costs hours
+								and wipes working state. System Doctor treats a captured OS image as the definition of correct
+								and moves a live machine back toward it without touching user data. It expands a WIM,
+								hash-indexes the file tree into a baseline, then scans for drift with policy-aware rules that
+								separate by-design posture from real faults. Eleven reviewed repairs are dry-run by default,
+								journalled and reversible. A 2B-parameter model answers in plain language and routes to exactly
+								one procedure &mdash; it never executes anything itself.</p>
+								<ul class="pj-tags">
+									<li>PowerShell</li><li>Three.js</li><li>llama.cpp</li><li>DISM / WIM</li><li>WMI</li><li>WebGL</li>
+								</ul>
+								<div class="pj-note">
+									<span>&#9679;</span>
+									<span><strong>Not publicly downloadable.</strong> Request a copy and I will share the
+									project on request.</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- TicketDesk -->
+						<article class="pj-card">
+							<div class="pj-shot"><img src="images/projects/ticketdesk.png" alt="TicketDesk ticket verification interface" /></div>
+							<div class="pj-body">
+								<h3>TicketDesk</h3>
+								<p class="pj-sub">One sentence to a verified, closed support record &middot; Python, CDP, REST</p>
+								<p>Walk-in support requests were filed by hand: open the portal, find the caller, look up their
+								laptop, set seven fields, submit, attach an article, then close the record with a code. TicketDesk
+								collapses that into a single sentence. It resolves the caller against the directory, defaults the
+								asset to that person's machine, drives the real incident form in a headless browser it owns, and
+								fills ten fields &mdash; then reads every one of them back before submitting, confirms the record
+								through the REST API, and closes it. A small local model only proposes hints; validation, lookup,
+								writes and verification are deterministic, with a gate after every write. Delivered hardened,
+								tested and packaged as a 39 MB portable zip.</p>
+								<ul class="pj-tags">
+									<li>Python</li><li>Chrome DevTools Protocol</li><li>llama.cpp</li><li>REST</li><li>SQLite</li><li>SSE</li>
+								</ul>
+								<div class="pj-note">
+									<span>&#9679;</span>
+									<span><strong>Not publicly downloadable.</strong> Request a copy and I will share the
+									project on request.</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- KB Problem-Genre Graph -->
+						<article class="pj-card">
+							<div class="pj-shot"><img src="images/projects/kb-graph.png" alt="Knowledge base problem-genre graph dashboard" /></div>
+							<div class="pj-body">
+								<h3>KB Problem-Genre Graph</h3>
+								<p class="pj-sub">Corpus classification and an offline answer engine &middot; Python, SQLite FTS5, llama.cpp</p>
+								<p>A large support knowledge base held tens of thousands of articles but offered no view of what
+								actually breaks. This project classifies 28,873 articles on two axes &mdash; domain genre and
+								document intent &mdash; using category, multilingual title vocabulary and corpus priors, with
+								explicit guards for corpus-specific homonyms. The result is a single-file dashboard: seventeen
+								genres with issue rates, a device-management deep dive, and a tool-footprint view that separates
+								articles <em>about</em> a tool from articles that merely name it in a runbook. The answer path was
+								then rebuilt as a self-contained product: bundled runtime, VRAM-gated GPU load with CPU fallback,
+								and a rowid map that replaced six full-text scans per answer.</p>
+								<ul class="pj-tags">
+									<li>Python</li><li>SQLite FTS5</li><li>BM25</li><li>llama.cpp</li><li>GGUF</li><li>WSL2</li>
+								</ul>
+								<div class="pj-note">
+									<span>&#9679;</span>
+									<span><strong>Not publicly downloadable.</strong> Request a copy and I will share the
+									project on request.</span>
+								</div>
+							</div>
+						</article>
+
 					</div>
 				</div>
 
