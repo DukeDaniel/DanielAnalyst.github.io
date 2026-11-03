@@ -204,9 +204,10 @@
 					<div class="container">
 						<header class="major">
 							<h2>Selected Projects</h2>
-							<p>Systems I designed and built end to end &mdash; from data pipelines and local
-							inference to packaged desktop tools. Interfaces shown below are sanitised
-							reconstructions; no production data appears anywhere on this page.</p>
+							<p>Applications I designed end to end. I did not write the code &mdash; data pipelines,
+								local inference, and the packaged desktop tools were all curated with AI tools.
+								Interfaces shown below are sanitised reconstructions; no production data appears
+								anywhere on this page.</p>
 						</header>
 
 						<style>
@@ -227,7 +228,12 @@
 							.pj-shot img { width: 100%; height: auto; display: block; }
 							.pj-body { flex: 1 1 56%; padding: 1.6em 1.8em; min-width: 300px; }
 							.pj-body h3 { font-size: 1.22em; font-weight: 600; color: #202020; margin: 0 0 0.2em 0; letter-spacing: -0.01em; }
-							.pj-sub { font-size: 0.86em; color: #7a7a7a; margin: 0 0 0.9em 0; letter-spacing: 0.01em; }
+							.pj-sub { font-size: 0.86em; color: #7a7a7a; margin: 0 0 0.7em 0; letter-spacing: 0.01em; }
+						.pj-role {
+							font-size: 0.82em; line-height: 1.5; color: #2f4a3c;
+							background: #f3f7f4; border-left: 3px solid #6a9a7b;
+							padding: 0.45em 0.75em; margin: 0 0 0.9em 0;
+						}
 							.pj-body p { font-size: 0.9em; line-height: 1.62; color: #555555; margin: 0 0 0.9em 0; }
 							.pj-tags { margin: 0 0 1em 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.4em; }
 							.pj-tags li {
@@ -253,6 +259,7 @@
 							<div class="pj-body">
 								<h3>Hermes Watch</h3>
 								<p class="pj-sub">Local work analytics for Windows &middot; Python, SQLite, Chrome extension</p>
+								<p class="pj-role">I designed this end to end. I did not code it &mdash; the implementation was curated with AI tools.</p>
 								<p>A portable Windows app that samples machine and human activity and turns it into an
 								honest daily summary. A native collector records CPU, memory, disk, network and GPU load,
 								the foreground window, per-process I/O and idle time. A Chrome extension covers the browser
@@ -278,6 +285,7 @@
 							<div class="pj-body">
 								<h3>Local Si</h3>
 								<p class="pj-sub">Self-contained local model stack &middot; Python, llama.cpp, CUDA</p>
+								<p class="pj-role">I designed this end to end. I did not code it &mdash; the implementation was curated with AI tools.</p>
 								<p>Running a useful model locally usually means juggling an inference server, a chat client and
 								hand-edited configuration. Local Si puts all of it in one folder: a Python web app that manages
 								pools of GGUF models, serves them through a single compatible endpoint, and embeds a full agent
@@ -302,6 +310,7 @@
 							<div class="pj-body">
 								<h3>System Doctor</h3>
 								<p class="pj-sub">In-place Windows repair console &middot; PowerShell, Three.js, local AI</p>
+								<p class="pj-role">I designed this end to end. I did not code it &mdash; the implementation was curated with AI tools.</p>
 								<p>Laptops that stay in service drift: policy quietly reverts, caches and update stores inflate,
 								services stop, drivers fail after a patch. The standard remedy is a reimage, which costs hours
 								and wipes working state. System Doctor treats a captured OS image as the definition of correct
@@ -327,6 +336,7 @@
 							<div class="pj-body">
 								<h3>TicketDesk</h3>
 								<p class="pj-sub">One sentence to a verified, closed support record &middot; Python, CDP, REST</p>
+								<p class="pj-role">I designed this end to end. I did not code it &mdash; the implementation was curated with AI tools.</p>
 								<p>Walk-in support requests were filed by hand: open the portal, find the caller, look up their
 								laptop, set seven fields, submit, attach an article, then close the record with a code. TicketDesk
 								collapses that into a single sentence. It resolves the caller against the directory, defaults the
@@ -352,6 +362,7 @@
 							<div class="pj-body">
 								<h3>KB Problem-Genre Graph</h3>
 								<p class="pj-sub">Corpus classification and an offline answer engine &middot; Python, SQLite FTS5, llama.cpp</p>
+								<p class="pj-role">I designed this end to end. I did not code it &mdash; the implementation was curated with AI tools.</p>
 								<p>A large support knowledge base held tens of thousands of articles but offered no view of what
 								actually breaks. This project classifies 28,873 articles on two axes &mdash; domain genre and
 								document intent &mdash; using category, multilingual title vocabulary and corpus priors, with
